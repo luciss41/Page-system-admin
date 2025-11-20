@@ -10,7 +10,7 @@ export const getProducts = async (req, res) => {
 
     res.render("products", { products: rows, search });
   } catch (e) {
-    res.send("Error ambil products");
+    res.send("Error memuat produk");
   }
 };
 
