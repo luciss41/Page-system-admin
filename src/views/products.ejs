@@ -1,0 +1,41 @@
+
+
+<h2>Stok Produk</h2>
+<div style="display:flex;">
+  <a href="/products/add" style="
+display: flex;
+align-items: center;
+    padding: 6px 8px;
+    background: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+  ">
+    + Tambah Produk
+  </a>
+
+<form method="GET" action="/products" style="margin-left: auto;">
+  <input type="text" name="search" placeholder="Search..." value="<%= search %>">
+  <button type="submit">Cari Produk</button>
+</form>
+</div>
+<table>
+  <tr>
+    <th>Nama Produk</th>
+    <th>Stok</th>
+    <th>Opsi</th>
+  </tr>
+
+  <% products.forEach(item => { %>
+    <tr>
+      <td><%= item.name %></td>
+      <td><%= item.stock %></td>
+       <td>
+        <a href="/products/edit/<%= item.id %>">Edit</a>
+        <form action="/products/delete/<%= item.id %>" method="POST" style="display:inline;">
+          <button type="submit">Hapus Produk</button>
+        </form>
+      </td>
+    </tr>
+  <% }) %>
+</table>

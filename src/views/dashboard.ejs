@@ -1,0 +1,38 @@
+<h2>Dashboard</h2>
+
+<div style="display:flex; gap:20px; margin-bottom:20px;">
+  <div>
+    <h3>Total Produk</h3>
+    <p><%= total_products %></p>
+  </div>
+
+  <div>
+    <h3>Total Pembelian</h3>
+    <p><%= total_purchases %></p>
+  </div>
+
+  <div>
+    <h3>Total Stok Produk</h3>
+    <p><%= total_stock %></p>
+  </div>
+</div>
+
+<h3>Pembelian Terkini</h3>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Nama Produk</th>
+    <th>Kuantitas</th>
+    <th>Tanggal</th>
+  </tr>
+
+  <% recent.forEach(r => { %>
+    <tr>
+      <td><%= r.id %></td>
+      <td><%= r.name %></td>
+      <td><%= r.qty %></td>
+      <td><%= r.date.toLocaleString() %></td>
+    </tr>
+  <% }) %>
+</table>

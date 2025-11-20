@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    nav a { margin-right: 15px; text-decoration:none; font-weight:bold; color:#444; }
+    nav a:hover { color:#000; }
+    table { width:100%; border-collapse: collapse; margin-top:20px; }
+    th, td { border:1px solid #ccc; padding:10px; }
+    th { background:#fafafa; }
+    input, select, button { padding:8px; margin-right:5px; }
+    button { cursor:pointer; }
+    form { margin-bottom:10px; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/dashboard">Dashboard</a>
+  <a href="/products">Data Produk</a>
+  <a href="/purchases">Data Pembelian</a>
+</nav>
+
+<hr/>
+<%- body %>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<h2>Data Pembelian</h2>
+
+<form action="/purchases/add" method="POST" style="margin-bottom:20px;">
+  <select name="product_id" required>
+    <option value="">Pilih Produk</option>
+    <% products.forEach(product => { %>
+      <option value="<%= product.id %>">
+        <%= product.name %> (ID: <%= product.id %>)
+      </option>
+    <% }) %>
+  </select>
+
+  <input name="qty" type="number" placeholder="Qty" required min="1" />
+  <button type="submit">Tambah</button>
+</form>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Nama Produk</th>
+    <th>Kuantitas</th>
+    <th>Tanggal</th>
+    <th>Opsi</th>
+  </tr>
+
+  <% if (purchases.length === 0) { %>
+    <tr>
+      <td colspan="5" style="text-align:center; color:#777;">Belum ada pembelian</td>
+    </tr>
+  <% } %>
+
+  <% purchases.forEach(row => { %>
+    <tr>
+      <td><%= row.id %></td>
+      <td><%= row.name %></td>
+      <td><%= row.qty %></td>
+      <td><%= row.date.toLocaleString() %></td>
+      <td>
+        <form action="/purchases/cancel/<%= row.id %>" method="POST">
+          <button type="submit">Batalkan</button>
+        </form>
+      </td>
+    </tr>
+  <% }) %>
+</table>
