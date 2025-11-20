@@ -36,6 +36,7 @@ Tech Stack
 -dotenv buat setup environment.
 
 ----------------------
+Struktur Folder
 rootfolder/
   src/
     controllers/
